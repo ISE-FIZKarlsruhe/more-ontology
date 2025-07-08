@@ -1,0 +1,28 @@
+# PURL configuration for http://purl.obolibrary.org/obo/more
+
+idspace: MORE
+base_url: /obo/more
+
+products:
+- more.owl: https://raw.githubusercontent.com/sarahondraszek/more/main/more.owl
+- more.obo: https://raw.githubusercontent.com/sarahondraszek/more/main/more.obo
+
+term_browser: ontobee
+example_terms:
+- MORE_0000000
+
+entries:
+
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/sarahondraszek/more/v
+
+- prefix: /tracker/
+  replacement: https://github.com/sarahondraszek/more/issues
+
+- prefix: /about/
+  replacement: http://www.ontobee.org/ontology/MORE?iri=http://purl.obolibrary.org/obo/
+
+## generic fall-through, serve direct from github by default
+- prefix: /
+  replacement: https://raw.githubusercontent.com/sarahondraszek/more/main/
+
