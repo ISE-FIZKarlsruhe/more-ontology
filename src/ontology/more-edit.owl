@@ -1,4 +1,4 @@
-Prefix(:=<http://purl.obolibrary.org/obo/more.owl#>)
+Prefix(:=<https://example.org/more#>)
 Prefix(dce:=<http://purl.org/dc/elements/1.1/>)
 Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
 Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
@@ -8,38 +8,34 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(dcterms:=<http://purl.org/dc/terms/>)
 
 
-Ontology(<http://purl.obolibrary.org/obo/more.owl>
-
-Import(<http://purl.obolibrary.org/obo/more/imports/po_import.owl>)
-Import(<http://purl.obolibrary.org/obo/more/imports/ro_import.owl>)
-Import(<http://purl.obolibrary.org/obo/more/imports/pato_import.owl>)
-
-
+Ontology(<https://example.org/more>
+Import(<https://example.org/more/more/components/imports-edit.owl>)
+Import(<https://example.org/more/more/components/template.owl>)
+Import(<https://example.org/more/more/imports/obi_import.owl>)
+Import(<https://example.org/more/more/imports/ro_import.owl>)
 Annotation(dcterms:description "None")
 Annotation(dcterms:license <https://creativecommons.org/licenses/unspecified>)
 Annotation(dcterms:title "MO|RE ontology")
 
-
-Declaration(Class(<http://purl.obolibrary.org/obo/MORE_0000000>))
 Declaration(AnnotationProperty(dcterms:description))
 Declaration(AnnotationProperty(dcterms:license))
 Declaration(AnnotationProperty(dcterms:title))
-
 ############################
 #   Annotation Properties
 ############################
 
+# Annotation Property: dcterms:description (description)
+
 AnnotationAssertion(rdfs:label dcterms:description "description")
+
+# Annotation Property: dcterms:license (license)
+
 AnnotationAssertion(rdfs:label dcterms:license "license")
+
+# Annotation Property: dcterms:title (title)
+
 AnnotationAssertion(rdfs:label dcterms:title "title")
 
-############################
-#   Classes
-############################
-
-# Class: <http://purl.obolibrary.org/obo/MORE_0000000> (root node)
-
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MORE_0000000> "root node"@en)
 
 
 )

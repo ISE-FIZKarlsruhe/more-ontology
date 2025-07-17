@@ -1,0 +1,16 @@
+URI	label	type	subclassof
+ID	LABEL	TYPE	SC %
+MORE:0010015	study	class	plan specification
+MORE:0010016	test item	class	plan specification
+MORE:0010017	hgrip	class	test item
+MORE:0010018	test process	class	assay
+MORE:0010019	strength	class	disposition
+MORE:0010020	hand strength	class	strength
+MORE:0010021	left hand strength	class	hand strength
+MORE:0010022	right hand strength	class	hand strength
+MORE:0010023	person	class	material entity
+MORE:0010024	test instrument	class	material entity
+MORE:0010025	hand dynamometer	class	test instrument
+MORE:0010026	strength measurement datum	class	scalar measurement datum
+MORE:0010027	left hand strength measurement datum	class	strength measurement datum
+MORE:0010028	right hand strength measurement datum	class	strength measurement datum

@@ -9,6 +9,9 @@
 # ----------------------------------------
 # More information: https://github.com/INCATools/ontology-development-kit/
 
+# Fingerprint of the configuration file when this Makefile was last generated
+CONFIG_HASH=                fe5e1a08566259195c9325d2e04bfec3feb4b471adf534419d941f9ad24c38e8
+
 
 # ----------------------------------------
 # Standard Constants
@@ -16,9 +19,9 @@
 # these can be overwritten on the command line
 
 OBOBASE=                    http://purl.obolibrary.org/obo
-URIBASE=                    http://purl.obolibrary.org/obo
+URIBASE=                    https://example.org/more
 ONT=                        more
-ONTBASE=                    http://purl.obolibrary.org/obo/more
+ONTBASE=                    https://example.org/more/more
 EDIT_FORMAT=                owl
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 MAKE_FAST=                  $(MAKE) IMP=false PAT=false COMP=false MIR=false
@@ -39,11 +42,12 @@ UPDATEREPODIR=              target
 SPARQLDIR =                 ../sparql
 EXTENDED_PREFIX_MAP=        $(TMPDIR)/obo.epm.json
 COMPONENTSDIR =             components
-REPORT_FAIL_ON =            None
+ROBOT_PROFILE =             profile.txt
+REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              -l true
-REPORT_PROFILE_OPTS =       
+REPORT_PROFILE_OPTS =       --profile $(ROBOT_PROFILE)
 OBO_FORMAT_OPTIONS =        --clean-obo "strict drop-untranslatable-axioms"
-SPARQL_VALIDATION_CHECKS =  owldef-self-reference iri-range label-with-iri multiple-replaced_by dc-properties 
+SPARQL_VALIDATION_CHECKS =  owldef-self-reference iri-range label-with-iri multiple-replaced_by 
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms 
 ODK_VERSION_MAKEFILE =      v1.6
 RELAX_OPTIONS =             --include-subclass-of true
@@ -54,14 +58,14 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 
+OTHER_SRC =                 $(COMPONENTSDIR)/imports-edit.owl $(COMPONENTSDIR)/template.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
 
-FORMATS = $(sort  owl obo owl)
+FORMATS = $(sort  owl ttl owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
-RELEASE_ARTEFACTS = $(sort $(ONT)-full $(ONT)-base )
+RELEASE_ARTEFACTS = $(sort $(ONT)-full )
 
 ifeq ($(ODK_DEBUG),yes)
 ODK_DEBUG_FILE = debug.log
@@ -101,7 +105,7 @@ PAT = true
 all: all_odk
 
 .PHONY: all_odk
-all_odk: odkversion test custom_reports all_assets
+all_odk: odkversion config_check test custom_reports all_assets
 
 .PHONY: test
 test: odkversion validate_idranges reason_test sparql_test robot_reports $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
@@ -123,6 +127,12 @@ reason_test: $(EDIT_PREPROCESSED)
 odkversion:
 	@echo "ODK Makefile $(ODK_VERSION_MAKEFILE)"
 	@odk-info --tools
+.PHONY: config_check
+config_check:
+	@if [ "$$(tr -d '\r' < $(ONT)-odk.yaml | sha256sum | cut -c1-64)" = "$(CONFIG_HASH)" ]; then \
+		echo "Repository is up-to-date." ; else \
+		echo "Your ODK configuration has changed since this Makefile was generated. You may need to run 'make update_repo'." ; fi
+
 
 $(TMPDIR) $(REPORTDIR) $(MIRRORDIR) $(IMPORTDIR) $(COMPONENTSDIR) $(SUBSETDIR):
 	mkdir -p $@
@@ -178,7 +188,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  po ro pato
+IMPORTS =  obi ro
 
 IMPORT_ROOTS = $(patsubst %, $(IMPORTDIR)/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -264,14 +274,18 @@ endif
 # ----------------------------------------
 
 $(REPORTDIR)/$(SRC)-obo-report.tsv: $(SRCMERGED) | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri $(URIBASE)/MORE_ --base-iri $(URIBASE)/more --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri $(URIBASE)/MORE_ --base-iri $(URIBASE)/more --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
-check_for_robot_updates:
-	echo "You are not using a custom profile, so you are getting the joy of the latest ROBOT report!"
-
+check_for_robot_updates:	
+	@cut -f2 "/tools/templates/src/ontology/profile.txt" | sort > $(TMPDIR)/sorted_tsv2.txt
+	@cut -f2 "$(ROBOT_PROFILE)" | sort > $(TMPDIR)/sorted_tsv1.txt
+	@comm -23 $(TMPDIR)/sorted_tsv2.txt $(TMPDIR)/sorted_tsv1.txt > $(TMPDIR)/missing.txt
+	@echo "Missing tests:"
+	@cat $(TMPDIR)/missing.txt
+	@rm $(TMPDIR)/sorted_tsv1.txt $(TMPDIR)/sorted_tsv2.txt $(TMPDIR)/missing.txt $(TMPDIR)/report_profile_robot.txt
 
 # ----------------------------------------
 # Release assets
@@ -393,7 +407,7 @@ $(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/%.owl $(IMPORTDIR)/%_terms.txt \
 		 remove $(foreach p, $(ANNOTATION_PROPERTIES), --term $(p)) \
 		        --term-file $(IMPORTDIR)/$*_terms.txt $(T_IMPORTSEED) \
 		        --select complement --select annotation-properties \
-		 odk:normalize --base-iri http://purl.obolibrary.org/obo \
+		 odk:normalize --base-iri https://example.org/more \
 		               --subset-decls true --synonym-decls true \
 		 repair --merge-axiom-annotations true \
 		 $(ANNOTATE_CONVERT_FILE)
@@ -427,18 +441,58 @@ no-mirror-refresh-%:
 		IMP=true IMP_LARGE=true MIR=false PAT=false $(IMPORTDIR)/$*_import.owl
 
 # ----------------------------------------
+# Components
+# ----------------------------------------
+# Some ontologies contain external and internal components. A component is included in the ontology in its entirety.
+
+ifeq ($(COMP),true)
+.PHONY: all_components
+all_components: $(OTHER_SRC)
+
+.PHONY: recreate-components
+recreate-components:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-imports-edit.owl \
+		--assume-new=$(TMPDIR)/stamp-component-template.owl \
+		COMP=true IMP=false MIR=true PAT=true all_components
+
+.PHONY: no-mirror-recreate-components
+no-mirror-recreate-components:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-imports-edit.owl \
+		--assume-new=$(TMPDIR)/stamp-component-template.owl \
+		COMP=true IMP=false MIR=false PAT=true all_components
+
+.PHONY: recreate-%
+recreate-%:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-$*.owl \
+		COMP=true IMP=false MIR=true PAT=true $(COMPONENTSDIR)/$*.owl
+
+.PHONY: no-mirror-recreate-%
+no-mirror-recreate-%:
+	$(MAKE) --assume-new=$(TMPDIR)/stamp-component-$*.owl \
+		COMP=true IMP=false MIR=false PAT=true $(COMPONENTSDIR)/$*.owl
+
+$(COMPONENTSDIR)/%.owl: $(TMPDIR)/stamp-component-%.owl | $(COMPONENTSDIR)
+	test -f $@ || touch $@
+.PRECIOUS: $(COMPONENTSDIR)/%.owl
+
+$(TMPDIR)/stamp-component-%.owl: | $(TMPDIR)
+	touch $@
+.PRECIOUS: $(TMPDIR)/stamp-component-%.owl
+
+endif # COMP=true
+# ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------
 
 ifeq ($(MIR),true)
 
 
-## ONTOLOGY: po
-.PHONY: mirror-po
-.PRECIOUS: $(MIRRORDIR)/po.owl
-mirror-po: | $(TMPDIR)
-	curl -L $(OBOBASE)/po.owl --create-dirs -o $(TMPDIR)/po-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/po-download.owl -o $(TMPDIR)/$@.owl
+## ONTOLOGY: obi
+.PHONY: mirror-obi
+.PRECIOUS: $(MIRRORDIR)/obi.owl
+mirror-obi: | $(TMPDIR)
+	curl -L $(OBOBASE)/obi.owl --create-dirs -o $(TMPDIR)/obi-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/obi-download.owl -o $(TMPDIR)/$@.owl
 
 
 ## ONTOLOGY: ro
@@ -447,14 +501,6 @@ mirror-po: | $(TMPDIR)
 mirror-ro: | $(TMPDIR)
 	curl -L $(OBOBASE)/ro.owl --create-dirs -o $(TMPDIR)/ro-download.owl --retry 4 --max-time 200 && \
 	$(ROBOT) convert -i $(TMPDIR)/ro-download.owl -o $(TMPDIR)/$@.owl
-
-
-## ONTOLOGY: pato
-.PHONY: mirror-pato
-.PRECIOUS: $(MIRRORDIR)/pato.owl
-mirror-pato: | $(TMPDIR)
-	curl -L $(OBOBASE)/pato.owl --create-dirs -o $(TMPDIR)/pato-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/pato-download.owl -o $(TMPDIR)/$@.owl
 
 
 $(MIRRORDIR)/%.owl: mirror-% | $(MIRRORDIR)
@@ -479,8 +525,8 @@ $(SUBSETDIR)/%.owl: $(ONT).owl | $(SUBSETDIR) all_robot_plugins
 .PRECIOUS: $(SUBSETDIR)/%.owl
 
 
-$(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl
-	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@
+$(SUBSETDIR)/%.ttl: $(SUBSETDIR)/%.owl
+	$(ROBOT) convert --input $< --check false -f ttl -o $@.tmp.ttl && mv $@.tmp.ttl $@
 
 
 # ---------------------------------------------
@@ -501,10 +547,9 @@ endif
 # ----------------------------------------
 
 
-$(ONT)-full.obo: $(ONT)-full.owl
-	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@
-$(ONT)-base.obo: $(ONT)-base.owl
-	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@
+$(ONT)-full.ttl: $(ONT)-full.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f ttl -o $@.tmp.ttl && mv $@.tmp.ttl $@
 # ----------------------------------------
 # Release artefacts: main release artefacts
 # ----------------------------------------
@@ -513,12 +558,13 @@ $(ONT).owl: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
-$(ONT).obo: $(ONT).owl
-	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@
+$(ONT).ttl: $(ONT).owl
+	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f ttl -o $@.tmp.ttl && mv $@.tmp.ttl $@
 # -----------------------------------------------------
 # Release artefacts: variants (base, full, simple, etc)
 # -----------------------------------------------------
-SHARED_ROBOT_COMMANDS = 
+SHARED_ROBOT_COMMANDS = remove --term owl:Nothing
 
 $(ONTOLOGYTERMS): $(SRCMERGED)
 	$(ROBOT) query -f csv -i $< --query ../sparql/more_terms.sparql $@
@@ -529,17 +575,6 @@ ROBOT_RELEASE_IMPORT_MODE=$(ROBOT) merge --input $<
 # ROBOT pipeline that removes imports, then merges components. This is for release artefacts that start from "base"
 ROBOT_RELEASE_IMPORT_MODE_BASE=$(ROBOT) remove --input $< --select imports --trim false merge $(patsubst %, -i %, $(OTHER_SRC)) 
 
-# base: A version of the ontology that does not include any externally imported axioms.
-$(ONT)-base.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(IMPORT_FILES)
-	$(ROBOT_RELEASE_IMPORT_MODE) \
-	reason --reasoner $(REASONER) --equivalent-classes-allowed asserted-only --exclude-tautologies structural --annotate-inferred-axioms false \
-	relax $(RELAX_OPTIONS) \
-	reduce -r $(REASONER) $(REDUCE_OPTIONS) \
-	remove --base-iri $(URIBASE)/MORE --axioms external --preserve-structure false --trim false \
-	$(SHARED_ROBOT_COMMANDS) \
-	annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
-		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		--output $@.tmp.owl && mv $@.tmp.owl $@
 # Full: The full artefacts with imports merged, reasoned.
 $(ONT)-full.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(IMPORT_FILES)
 	$(ROBOT_RELEASE_IMPORT_MODE) \
@@ -608,6 +643,8 @@ update_repo:
 	odk.py update
 	
 
+update_docs:
+	mkdocs gh-deploy --config-file ../../mkdocs.yaml
 
 # Note to future generations: computing the real path relative to the
 # current directory is a way to ensure we only clean up directories that

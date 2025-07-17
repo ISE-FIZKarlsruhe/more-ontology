@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+<?xml version='1.0' encoding='UTF-8'?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
   <group id="odk-managed-catalog" prefer="public">
-    <uri name="http://purl.obolibrary.org/obo/more/imports/po_import.owl" uri="imports/po_import.owl"/>
-    <uri name="http://purl.obolibrary.org/obo/more/imports/ro_import.owl" uri="imports/ro_import.owl"/>
-    <uri name="http://purl.obolibrary.org/obo/more/imports/pato_import.owl" uri="imports/pato_import.owl"/>
+    <uri name="https://example.org/more/more/imports/obi_import.owl" uri="imports/obi_import.owl" />
+    <uri name="https://example.org/more/more/imports/ro_import.owl" uri="imports/ro_import.owl" />
+    <uri name="https://example.org/more/more/components/imports-edit.owl" uri="components/imports-edit.owl" />
+    <uri name="https://example.org/more/more/components/template.owl" uri="components/template.owl" />
   </group>
 </catalog>
