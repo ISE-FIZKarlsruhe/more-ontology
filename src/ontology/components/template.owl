@@ -52,6 +52,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000055"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000039 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000039"/>
@@ -70,6 +82,30 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0000056 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000056"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000059 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000059"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000087 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000087"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000091 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000091"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/STATO_0000102 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/STATO_0000102"/>
@@ -84,6 +120,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001937 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001937"/>
     
 
 
@@ -110,6 +152,18 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000016 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000016"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000007 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000007"/>
@@ -122,6 +176,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000104"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000408 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000408"/>
@@ -131,6 +191,24 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000416 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000416"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000067 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000067"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000070 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000260 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000260"/>
     
 
 
@@ -1141,45 +1219,33 @@ genau.)</obo:IAO_0000116>
     
 
 
-    <!-- https://example.org/more/MORE_0010036 -->
+    <!-- https://example.org/more/MORE_00100361 -->
 
-    <owl:Class rdf:about="https://example.org/more/MORE_0010036">
+    <owl:Class rdf:about="https://example.org/more/MORE_00100361">
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010007"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010008"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
                     <owl:Restriction>
-                        <owl:onProperty>
-                            <rdf:Description>
-                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
-                            </rdf:Description>
-                        </owl:onProperty>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010007"/>
-                                            </owl:Restriction>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010008"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                        <owl:hasValue rdf:resource="https://example.org/more/MORE_0010036"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <obo:IAO_0000116>Kraft like + Rechte Hand</obo:IAO_0000116>
-        <obo:IAO_0000118>Hgrip</obo:IAO_0000118>
-        <rdfs:label>Handgrip Test Item</rdfs:label>
+        <rdfs:label>Handgrip Test Process</rdfs:label>
     </owl:Class>
     
 
@@ -1254,6 +1320,87 @@ genau.)</obo:IAO_0000116>
     
 
 
+    <!-- https://example.org/more/MORE_0010039 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010039">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:label>study</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010040 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010040">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
+        <rdfs:label>test process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010041 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010041">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
+        <rdfs:label>strength</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010042 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010042">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010041"/>
+        <rdfs:label>hand strength</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010043 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010043">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010042"/>
+        <rdfs:label>left hand strength</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010044 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010044">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010042"/>
+        <rdfs:label>right hand strength</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010045 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010045">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label>person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010046 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010046">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label>test instrument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010047 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010047">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010046"/>
+        <rdfs:label>hand dynamometer</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1262,6 +1409,147 @@ genau.)</obo:IAO_0000116>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- https://example.org/more/MORE_0010036 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010036">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010015"/>
+        <obo:IAO_0000116>Kraft like + Rechte Hand</obo:IAO_0000116>
+        <obo:IAO_0000118>Hgrip</obo:IAO_0000118>
+        <rdfs:label>Handgrip Test Item</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010052 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010052">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010039"/>
+        <obo:BFO_0000051 rdf:resource="https://example.org/more/MORE_0010036"/>
+        <rdfs:label>example study 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010054 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010054">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000260"/>
+        <obo:RO_0000059 rdf:resource="https://example.org/more/MORE_0010036"/>
+        <rdfs:label>plan 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010055 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010055">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010040"/>
+        <obo:BFO_0000055 rdf:resource="https://example.org/more/MORE_0010054"/>
+        <obo:OBI_0000299 rdf:resource="https://example.org/more/MORE_0010062"/>
+        <obo:OBI_0000299 rdf:resource="https://example.org/more/MORE_0010063"/>
+        <obo:STATO_0000102 rdf:resource="https://example.org/more/MORE_0010036"/>
+        <rdfs:label>handgrip test process 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010057 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010057">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010043"/>
+        <rdfs:label>left hand strength 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010058 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010058">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010044"/>
+        <rdfs:label>right hand strength 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010059 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010059">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010045"/>
+        <obo:RO_0000056 rdf:resource="https://example.org/more/MORE_0010055"/>
+        <obo:RO_0000087 rdf:resource="https://example.org/more/MORE_0010061"/>
+        <obo:RO_0000091 rdf:resource="https://example.org/more/MORE_0010036,%20MORE:0010037"/>
+        <rdfs:label>person 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010060 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010060">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010047"/>
+        <obo:RO_0000056 rdf:resource="https://example.org/more/MORE_0010060"/>
+        <rdfs:label>hand dynamometer 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010061 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010061">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0000067"/>
+        <rdfs:label>evaluant role 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010062 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010062">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010007"/>
+        <obo:OBI_0001938 rdf:resource="https://example.org/more/MORE_0010064"/>
+        <rdfs:label>left hand strength measurement datum 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010063 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010063">
+        <rdf:type rdf:resource="https://example.org/more/MORE_0010008"/>
+        <obo:OBI_0001938 rdf:resource="https://example.org/more/MORE_0010065"/>
+        <rdfs:label>right hand strength measurement datum 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010064 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010064">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <obo:IAO_0000039 rdf:resource="https://qudt.org/vocab/unit/KiloGM"/>
+        <obo:OBI_0001937 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25.0&quot;</obo:OBI_0001937>
+        <rdfs:label>value spec 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010065 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010065">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0001933"/>
+        <obo:IAO_0000039 rdf:resource="https://qudt.org/vocab/unit/KiloGM"/>
+        <obo:OBI_0001937 rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">29.0&quot;</obo:OBI_0001937>
+        <rdfs:label>value spec 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://example.org/more/MORE_0010036,%20MORE:0010037 -->
+
+    <owl:NamedIndividual rdf:about="https://example.org/more/MORE_0010036,%20MORE:0010037"/>
     
 
 
