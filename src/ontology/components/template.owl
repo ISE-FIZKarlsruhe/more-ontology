@@ -1,12 +1,95 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://example.org/more/more/components/template.owl#"
      xml:base="https://example.org/more/more/components/template.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="https://example.org/more/more/components/template.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000118 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000039 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000039"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000299 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000299"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001938 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001938"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/STATO_0000102 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/STATO_0000102"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0002135 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0002135"/>
     
 
 
@@ -21,15 +104,15 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000016 -->
+    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000016"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
+    <!-- http://purl.obolibrary.org/obo/IAO_0000007 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000007"/>
     
 
 
@@ -39,23 +122,295 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/IAO_0000104 -->
+    <!-- http://purl.obolibrary.org/obo/IAO_0000408 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000104"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000408"/>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/OBI_0000070 -->
+    <!-- http://purl.obolibrary.org/obo/IAO_0000416 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000070"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000416"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000938 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000938"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001554 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001554"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001933 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+    
+
+
+    <!-- https://example.org/more/MORE_0010001 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
+        <rdfs:label>repetition measurement datum</rdfs:label>
+        <skos:definition>scalar measurement datum that is the result of counting the number of repetitions of some exercise</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010003 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000938"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0002135"/>
+                                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>success measurement datum</rdfs:label>
+        <skos:definition>categorical measurement datum that indicates whether the subject has successfully completed a task or not</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010004 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000408"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000039"/>
+                                <owl:hasValue rdf:resource="https://qudt.org/vocab/unit/CentiM"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000039"/>
+                                <owl:hasValue rdf:resource="https://qudt.org/vocab/unit/M"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0002135"/>
+                                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>distance measurement datum</rdfs:label>
+        <skos:definition>length measurement that is the result of measuring the distance traveled by a subject</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010005 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0001554"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000039"/>
+                                <owl:hasValue rdf:resource="https://qudt.org/vocab/unit/PER-MIN"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0002135"/>
+                                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>pulse rate measurement datum</rdfs:label>
+        <skos:definition>rate measurement datum that indicates the heart rate</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010006 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000039"/>
+                                <owl:hasValue rdf:resource="https://qudt.org/vocab/unit/KiloGM"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0002135"/>
+                                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>strength measurement datum</rdfs:label>
+        <skos:definition>scalar measurement datum that indicates the muscle strength of a part of the subject&apos;s body</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010007 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010007">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010006"/>
+        <rdfs:label>left hand strength measurement datum</rdfs:label>
+        <skos:definition>strength measurement datum indicating left hand grip strength</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010008 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010008">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010006"/>
+        <rdfs:label>right hand strength measurement datum</rdfs:label>
+        <skos:definition>strength measurement datum of right hand right hand grip strength</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010009 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000408"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001938"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0001933"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000039"/>
+                                <owl:hasValue rdf:resource="https://qudt.org/vocab/unit/CentiM"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>space measurement datum</rdfs:label>
+        <skos:definition>length measurement that is the result of measuring the space between something</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010012 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010012">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010005"/>
+        <rdfs:label>pulse rate before measurement datum</rdfs:label>
+        <skos:definition>pulse rate measurement datum that has been determined before a test</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010013 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010013">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010005"/>
+        <rdfs:label>pulse rate during measurement datum</rdfs:label>
+        <skos:definition>pulse rate measurement datum that has been determined during a test</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010014 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010014">
+        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010005"/>
+        <rdfs:label>pulse rate after measurement datum</rdfs:label>
+        <skos:definition>pulse rate measurement datum that has been determined after a test</skos:definition>
+    </owl:Class>
     
 
 
     <!-- https://example.org/more/MORE_0010015 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010015">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
-        <rdfs:label>study</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000007"/>
+        <rdfs:label>more test item</rdfs:label>
     </owl:Class>
     
 
@@ -63,8 +418,34 @@
     <!-- https://example.org/more/MORE_0010016 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010016">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
-        <rdfs:label>test item</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Anzahl Bodenkotakte (die in einer Minute erreicht werden)</obo:IAO_0000116>
+        <obo:IAO_0000118>Einbein</obo:IAO_0000118>
+        <rdfs:label>Einbeinstand (Flamingo Balance) Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -72,8 +453,34 @@
     <!-- https://example.org/more/MORE_0010017 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010017">
-        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010016"/>
-        <rdfs:label>hgrip</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Anzahl Sprünge (Mittelwert aus 2 Versuchen von 15sec Dauer  mit 1 min Pause dazwischen)</obo:IAO_0000116>
+        <obo:IAO_0000118>SSH</obo:IAO_0000118>
+        <rdfs:label>Seitliches Hin- und Herspringen Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -81,8 +488,34 @@
     <!-- https://example.org/more/MORE_0010018 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010018">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000070"/>
-        <rdfs:label>test process</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Anzahl Schritte (Summe der Schritte aus insgesamt 6 Durchgängen)</obo:IAO_0000116>
+        <obo:IAO_0000118>Bal-rw</obo:IAO_0000118>
+        <rdfs:label>Balancieren rückwärts Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -90,8 +523,42 @@
     <!-- https://example.org/more/MORE_0010019 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010019">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
-        <rdfs:label>strength</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zeit in Sekunden, die für 6 m benötigt wird. Falls weniger als 6 m erreicht werden, wird die weiteste Distanz in Meter)</obo:IAO_0000116>
+        <obo:IAO_0000118>Walk-rw-z</obo:IAO_0000118>
+        <rdfs:label>Rückwärts gehen (Zeit) Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -99,8 +566,42 @@
     <!-- https://example.org/more/MORE_0010020 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010020">
-        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010019"/>
-        <rdfs:label>hand strength</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                            </owl:Restriction>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zeit in Sekunden, die für 6 m benötigt wird. Falls weniger als 6 m erreicht werden, wird die weiteste Distanz in Meter)</obo:IAO_0000116>
+        <obo:IAO_0000118>Walk-rw-s</obo:IAO_0000118>
+        <rdfs:label>Rückwärts gehen (Strecke) Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -108,8 +609,34 @@
     <!-- https://example.org/more/MORE_0010021 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010021">
-        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010020"/>
-        <rdfs:label>left hand strength</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zeit </obo:IAO_0000116>
+        <obo:IAO_0000118>KaBu-Lauf</obo:IAO_0000118>
+        <rdfs:label>Kasten-Bumerang-Lauf Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -117,8 +644,34 @@
     <!-- https://example.org/more/MORE_0010022 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010022">
-        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010020"/>
-        <rdfs:label>right hand strength</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Anzahl (Punkte)</obo:IAO_0000116>
+        <obo:IAO_0000118>Zielw</obo:IAO_0000118>
+        <rdfs:label>Zielwerfen Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -126,8 +679,34 @@
     <!-- https://example.org/more/MORE_0010023 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010023">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:label>person</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010003"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Erfüllt / nicht Erfüllt</obo:IAO_0000116>
+        <obo:IAO_0000118>BBW</obo:IAO_0000118>
+        <rdfs:label>Ball-Beine-Wand-Wurf Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -135,8 +714,35 @@
     <!-- https://example.org/more/MORE_0010024 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010024">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:label>test instrument</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Anzahl  (Anzahl der gelaufenen Minuten (also
+Stufen) wird mit einer Genauigkeit von halben Minuten, jeweils abgerundet, gemessen[sic gezählt].)</obo:IAO_0000116>
+        <obo:IAO_0000118>S-Run</obo:IAO_0000118>
+        <rdfs:label>Shuttle Run Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -144,8 +750,42 @@
     <!-- https://example.org/more/MORE_0010025 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010025">
-        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010024"/>
-        <rdfs:label>hand dynamometer</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010012"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zeit in Minuten und Sekunden und 3 Pulswerte</obo:IAO_0000116>
+        <obo:IAO_0000118>2km-Walk</obo:IAO_0000118>
+        <rdfs:label>2-km-Walking-Test Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -153,8 +793,34 @@
     <!-- https://example.org/more/MORE_0010026 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010026">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000032"/>
-        <rdfs:label>strength measurement datum</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010004"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Wegstecke </obo:IAO_0000116>
+        <obo:IAO_0000118>6-Min</obo:IAO_0000118>
+        <rdfs:label>6-Minuten Lauf Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -162,8 +828,35 @@
     <!-- https://example.org/more/MORE_0010027 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010027">
-        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010026"/>
-        <rdfs:label>left hand strength measurement datum</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010004"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Wegstrecke (Der Messwert für jede Testperson ist die in 12 Minuten zurückgelegte Wegstrecke in Metern auf 25 m
+genau.)</obo:IAO_0000116>
+        <obo:IAO_0000118>12-Min</obo:IAO_0000118>
+        <rdfs:label>Cooper-Test Test Item</rdfs:label>
     </owl:Class>
     
 
@@ -171,9 +864,428 @@
     <!-- https://example.org/more/MORE_0010028 -->
 
     <owl:Class rdf:about="https://example.org/more/MORE_0010028">
-        <rdfs:subClassOf rdf:resource="https://example.org/more/MORE_0010026"/>
-        <rdfs:label>right hand strength measurement datum</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zeit</obo:IAO_0000116>
+        <obo:IAO_0000118>D-Step</obo:IAO_0000118>
+        <rdfs:label>Dänischer Step Test Test Item</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010029 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010029">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010004"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Stoßweite (wird auf 1 cm genau gemessen)</obo:IAO_0000116>
+        <obo:IAO_0000118>MED</obo:IAO_0000118>
+        <rdfs:label>Medizinballstoßen Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010030 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010030">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010004"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Sprungweite (0,1 Zentimeter genau.)</obo:IAO_0000116>
+        <obo:IAO_0000118>SW</obo:IAO_0000118>
+        <rdfs:label>Standweitsprung Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010031 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010031">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Sprunghöhe (Sie wird auf 0,1 cm genau erfasst.)</obo:IAO_0000116>
+        <obo:IAO_0000118>J&amp;R</obo:IAO_0000118>
+        <rdfs:label>Jump &amp; Reach Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010032 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010032">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Anzahl  (korrekt durchgeführte in 40 Sek)</obo:IAO_0000116>
+        <obo:IAO_0000118>LS</obo:IAO_0000118>
+        <rdfs:label>Liegestütze Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010033 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010033">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Anzahl  (korrekt durchgeführte in 40 Sek)</obo:IAO_0000116>
+        <obo:IAO_0000118>SU</obo:IAO_0000118>
+        <rdfs:label>Sit-Ups Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010034 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010034">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zeit in Sek (0,1 Sek. genau)</obo:IAO_0000116>
+        <obo:IAO_0000118>20m</obo:IAO_0000118>
+        <rdfs:label>20m-Sprint (Handstoppung) Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010035 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010035">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000416"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zeit in Sek (0,01 Sek. genau)</obo:IAO_0000116>
+        <obo:IAO_0000118>20m_Ls</obo:IAO_0000118>
+        <rdfs:label>20m-Sprint (Lichtschranke) Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010036 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010036">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010007"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                                <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010008"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Kraft like + Rechte Hand</obo:IAO_0000116>
+        <obo:IAO_0000118>Hgrip</obo:IAO_0000118>
+        <rdfs:label>Handgrip Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010037 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010037">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010009"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Abstand (wird auf 0,1 cm genau gemessen)</obo:IAO_0000116>
+        <obo:IAO_0000118>Si&amp;R</obo:IAO_0000118>
+        <rdfs:label>Sit &amp; Reach Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://example.org/more/MORE_0010038 -->
+
+    <owl:Class rdf:about="https://example.org/more/MORE_0010038">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://example.org/more/MORE_0010015"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000102"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                                        <owl:someValuesFrom rdf:resource="https://example.org/more/MORE_0010009"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <obo:IAO_0000116>Zentimetern (auf 0,1 cm genau)</obo:IAO_0000116>
+        <obo:IAO_0000118>RB</obo:IAO_0000118>
+        <rdfs:label>Rumpfbeuge Test Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://qudt.org/vocab/unit/CentiM -->
+
+    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/CentiM"/>
+    
+
+
+    <!-- https://qudt.org/vocab/unit/KiloGM -->
+
+    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/KiloGM"/>
+    
+
+
+    <!-- https://qudt.org/vocab/unit/M -->
+
+    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/M"/>
+    
+
+
+    <!-- https://qudt.org/vocab/unit/PER-MIN -->
+
+    <owl:NamedIndividual rdf:about="https://qudt.org/vocab/unit/PER-MIN"/>
 </rdf:RDF>
 
 

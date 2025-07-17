@@ -3,6 +3,7 @@
   <group id="odk-managed-catalog" prefer="public">
     <uri name="https://example.org/more/more/imports/obi_import.owl" uri="imports/obi_import.owl" />
     <uri name="https://example.org/more/more/imports/ro_import.owl" uri="imports/ro_import.owl" />
+    <uri name="https://example.org/more/more/imports/stato_import.owl" uri="imports/stato_import.owl" />
     <uri name="https://example.org/more/more/components/imports-edit.owl" uri="components/imports-edit.owl" />
     <uri name="https://example.org/more/more/components/template.owl" uri="components/template.owl" />
   </group>

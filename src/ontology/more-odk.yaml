@@ -16,6 +16,7 @@ import_group:
    products:
     - id: obi
     - id: ro
+    - id: stato
 components:
   templates:
       - filename: template.tsv
