@@ -17,7 +17,7 @@ These are the current imports in MORE
 | Import | URL | Type |
 | ------ | --- | ---- |
 | obi | http://purl.obolibrary.org/obo/obi.owl | slme |
-| ro | http://purl.obolibrary.org/obo/ro.owl | slme |
+| ro | https://raw.githubusercontent.com/oborel/obo-relations/refs/tags/v2025-06-24/core.owl | slme |
 | stato | http://purl.obolibrary.org/obo/stato.owl | slme |
 ## Components
 Components, in contrast to imports, are considered full members of the ontology. This means that any axiom in a component is also included in the ontology base - which means it is considered _native_ to the ontology. While this sounds complicated, consider this: conceptually, no component should be part of more than one ontology. If that seems to be the case, we are most likely talking about an import. Components are often not needed for ontologies, but there are some use cases:
